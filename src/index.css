@@ -263,3 +263,12 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.king-footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+
