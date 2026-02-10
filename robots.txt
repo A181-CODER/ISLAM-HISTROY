@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://islam-histroy.vercel.app/sitemap.xml
