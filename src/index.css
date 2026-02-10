@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0a1628;
+  --color-navy-light: #111d35;
+  --color-navy-lighter: #1a2a4a;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e2c76e;
+  --color-gold-dark: #a68a3a;
+  --color-emerald: #1b6b4a;
+  --color-emerald-light: #28a06e;
+  --color-ivory: #f5f0e8;
+  --color-ivory-dark: #e8dfd0;
+  --color-burgundy: #8b2252;
+  --color-azure: #1e5fa8;
+  --font-family-amiri: 'Amiri', serif;
+  --font-family-cairo: 'Cairo', sans-serif;
+  --font-family-naskh: 'Noto Naskh Arabic', serif;
+}
+
+* {
+  font-family: 'Cairo', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a1628;
+  color: #f5f0e8;
+  overflow-x: hidden;
+}
+
+/* Islamic Geometric Pattern Background */
+.islamic-pattern {
+  background-image: 
+    linear-gradient(30deg, rgba(201,168,76,0.03) 12%, transparent 12.5%, transparent 87%, rgba(201,168,76,0.03) 87.5%),
+    linear-gradient(150deg, rgba(201,168,76,0.03) 12%, transparent 12.5%, transparent 87%, rgba(201,168,76,0.03) 87.5%),
+    linear-gradient(30deg, rgba(201,168,76,0.03) 12%, transparent 12.5%, transparent 87%, rgba(201,168,76,0.03) 87.5%),
+    linear-gradient(150deg, rgba(201,168,76,0.03) 12%, transparent 12.5%, transparent 87%, rgba(201,168,76,0.03) 87.5%),
+    linear-gradient(60deg, rgba(201,168,76,0.05) 25%, transparent 25.5%, transparent 75%, rgba(201,168,76,0.05) 75%),
+    linear-gradient(60deg, rgba(201,168,76,0.05) 25%, transparent 25.5%, transparent 75%, rgba(201,168,76,0.05) 75%);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.islamic-pattern-dense {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(201,168,76,0.06) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(201,168,76,0.06) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(45deg, rgba(201,168,76,0.04) 0px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(-45deg, rgba(201,168,76,0.04) 0px, transparent 1px, transparent 28px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c44;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a84c88;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.3); }
+  50% { box-shadow: 0 0 40px rgba(201,168,76,0.6); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.7s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 30s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.glass-light {
+  background: rgba(201, 168, 76, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Room Cards */
+.room-card {
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+}
+
+.room-card:hover .room-card-inner {
+  box-shadow: 0 20px 60px rgba(201, 168, 76, 0.2), 0 0 0 1px rgba(201, 168, 76, 0.3);
+}
+
+/* Timeline */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #c9a84c, #c9a84c, transparent);
+}
+
+.timeline-dot {
+  box-shadow: 0 0 0 4px #0a1628, 0 0 0 6px #c9a84c, 0 0 20px rgba(201,168,76,0.4);
+}
+
+/* Manuscript */
+.manuscript-card {
+  transition: all 0.5s ease;
+  background: linear-gradient(145deg, #1a2a4a, #111d35);
+}
+
+.manuscript-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 50px rgba(201,168,76,0.15);
+}
+
+/* Text Glow */
+.text-glow {
+  text-shadow: 0 0 30px rgba(201,168,76,0.5), 0 0 60px rgba(201,168,76,0.2);
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #c9a84c;
+  border-radius: 50%;
+  animation: starTwinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+/* Ornamental Divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  height: 1px;
+  width: 100px;
+  background: linear-gradient(to var(--dir, left), #c9a84c, transparent);
+}
+
+.ornament-divider::before { --dir: left; }
+.ornament-divider::after { --dir: right; }
+
+/* Audio Button */
+.audio-btn {
+  transition: all 0.3s ease;
+}
+
+.audio-btn:hover {
+  background: rgba(201,168,76,0.2);
+  box-shadow: 0 0 20px rgba(201,168,76,0.3);
+}
+
+.audio-btn.playing {
+  background: rgba(201,168,76,0.25);
+  box-shadow: 0 0 25px rgba(201,168,76,0.4);
+}
+
+/* Page Transition */
+.page-enter {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Arch shape */
+.arch-top {
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
